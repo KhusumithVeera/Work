@@ -1,0 +1,255 @@
+<!-- Design based on Profile.pdf -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khusumith Veera - Personal Profile</title>
+  <style>
+    :root {
+      --bg-color: #f5f5f7;
+      --card-bg: #ffffff;
+      --text-main: #1d1d1f;
+      --text-muted: #86868b;
+      --accent: #0066cc;
+      --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      margin: 0;
+      padding: 60px 20px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 0 0 12px 0;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin: 0 0 24px 0;
+      letter-spacing: 0.01em;
+    }
+
+    .summary {
+      font-size: 21px;
+      font-weight: 400;
+      max-width: 680px;
+      margin: 0 auto 28px auto;
+      color: var(--text-main);
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 17px;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-links a:hover {
+      opacity: 0.8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 40px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #d2d2d7;
+      padding-bottom: 16px;
+    }
+
+    .timeline-item {
+      margin-bottom: 32px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item h4 {
+      margin: 0 0 4px 0;
+      font-size: 19px;
+      font-weight: 600;
+    }
+
+    .timeline-item h5 {
+      margin: 0 0 6px 0;
+      font-size: 17px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .timeline-item .date {
+      font-size: 15px;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 4px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      padding: 12px 0;
+      border-bottom: 1px solid #f5f5f7;
+      font-size: 17px;
+    }
+
+    li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>Khusumith Veera[cite: 1]</h1>
+      <h2>Product manager[cite: 1] | United States[cite: 1]</h2>
+      <p class="summary">Creative problem solver with engineering and management expertise[cite: 1]</p>
+      <div class="contact-links">
+        <a href="mailto:khusumithveera@gmail.com">khusumithveera@gmail.com[cite: 1]</a>
+        <a href="https://www.linkedin.com/in/khusumithveera05" target="_blank" rel="noopener noreferrer">LinkedIn Profile[cite: 1]</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <h3>Experience</h3>
+          <div class="timeline-item">
+            <h4>Associate Product Manager[cite: 1]</h4>
+            <h5>TechCiti Software Consulting Private Limited[cite: 1]</h5>
+            <span class="date">September 2025 - August 2026 (1 year)[cite: 1] | Bengaluru[cite: 1]</span>
+          </div>
+          
+          <div class="timeline-item">
+            <h4>Product Manager[cite: 1]</h4>
+            <h5>Awwzo[cite: 1]</h5>
+            <span class="date">September 2024 - December 2024 (4 months)[cite: 1] | Bengaluru, Karnataka, India[cite: 1]</span>
+          </div>
+
+          <div class="timeline-item">
+            <h4>AIML Engineer[cite: 1]</h4>
+            <h5>Google[cite: 1]</h5>
+            <span class="date">July 2024 September 2024 (3 months)[cite: 1]</span>
+          </div>
+
+          <div class="timeline-item">
+            <h4>AI and Cloud Engineer & Frontend Developer (3 months)[cite: 1]</h4>
+            <h5>IBM[cite: 1]</h5>
+            <span class="date">AI and Cloud Engineer: July 2024 - August 2024 (2 months)[cite: 1] <br> Frontend Developer: June 2024 - August 2024 (3 months)[cite: 1]</span>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Founder & CEO[cite: 1]</h4>
+            <h5>Fresh Filters[cite: 1]</h5>
+            <span class="date">March 2020 - January 2022 (1 year 11 months)[cite: 1] | Bengaluru[cite: 1]</span>
+          </div>
+        </section>
+        
+        <section class="card">
+          <h3>Education</h3>
+          <div class="timeline-item">
+            <h4>Master of Science, Engineering Management (2026-2028)[cite: 1]</h4>
+            <h5>University of Massachusetts Amherst[cite: 1]</h5>
+          </div>
+          <div class="timeline-item">
+            <h4>Bachelor of Engineering, Compuer science - AIML (2021-2025)[cite: 1]</h4>
+            <h5>Visvesvaraya Technological University[cite: 1]</h5>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <section class="card">
+          <h3>Top Skills</h3>
+          <ul>
+            <li>Product Management[cite: 1]</li>
+            <li>Project Management[cite: 1]</li>
+            <li>Strategic Thinking[cite: 1]</li>
+          </ul>
+        </section>
+        
+        <section class="card">
+          <h3>Certifications & Awards</h3>
+          <ul>
+            <li>Design Thinking for Innovation[cite: 1]</li>
+            <li>Financial Markets[cite: 1]</li>
+            <li>Successful Negotiation: Essential Strategies and Skills[cite: 1]</li>
+            <li>IETE Tech Talk (Honors-Awards)[cite: 1]</li>
+            <li>Debate Competition (Honors-Awards)[cite: 1]</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h3>Languages</h3>
+          <ul>
+            <li>Telugu[cite: 1]</li>
+            <li>English[cite: 1]</li>
+            <li>Hindi[cite: 1]</li>
+            <li>Tamil[cite: 1]</li>
+            <li>Kannada[cite: 1]</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
