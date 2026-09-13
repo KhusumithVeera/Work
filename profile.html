@@ -1,255 +1,989 @@
-<!-- Design based on Profile.pdf -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khusumith Veera - Personal Profile</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Khusumith Veera — Product Manager, engineer, and creative problem solver." />
+  <title>Khusumith Veera — Product Manager</title>
+
   <style>
     :root {
-      --bg-color: #f5f5f7;
-      --card-bg: #ffffff;
-      --text-main: #1d1d1f;
-      --text-muted: #86868b;
-      --accent: #0066cc;
-      --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --bg: #f5f5f7;
+      --surface: rgba(255, 255, 255, 0.72);
+      --white: #ffffff;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --line: rgba(0, 0, 0, 0.08);
+      --accent: #0071e3;
+      --accent-soft: #e8f2ff;
+      --max: 1180px;
+      --radius: 28px;
     }
-    
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: var(--font-family);
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 60px 20px;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+        "SF Pro Text", Inter, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1040px;
-      margin: 0 auto;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* Navigation */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(245, 245, 247, 0.78);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-inner {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: var(--text);
+      color: white;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* Hero */
 
     .hero {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .hero h1 {
-      font-size: 56px;
-      font-weight: 700;
-      letter-spacing: -0.015em;
-      margin: 0 0 12px 0;
-    }
-
-    .hero h2 {
-      font-size: 24px;
-      font-weight: 500;
-      color: var(--text-muted);
-      margin: 0 0 24px 0;
-      letter-spacing: 0.01em;
-    }
-
-    .summary {
-      font-size: 21px;
-      font-weight: 400;
-      max-width: 680px;
-      margin: 0 auto 28px auto;
-      color: var(--text-main);
-    }
-
-    .contact-links {
+      min-height: 92vh;
       display: flex;
-      justify-content: center;
-      gap: 24px;
+      align-items: center;
+      padding: 150px 0 90px;
     }
 
-    .contact-links a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 17px;
-      transition: opacity 0.2s ease;
-    }
-
-    .contact-links a:hover {
-      opacity: 0.8;
-    }
-
-    .grid {
+    .hero-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 24px;
+      grid-template-columns: 1.5fr 0.8fr;
+      gap: 80px;
+      align-items: end;
     }
 
-    @media (max-width: 768px) {
-      .grid {
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #30d158;
+    }
+
+    h1 {
+      max-width: 850px;
+      font-size: clamp(58px, 8vw, 104px);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+      font-weight: 650;
+    }
+
+    .hero-description {
+      max-width: 620px;
+      margin-top: 34px;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 34px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 21px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--text);
+      color: white;
+    }
+
+    .button-secondary {
+      background: var(--white);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .hero-side {
+      border-left: 1px solid var(--line);
+      padding-left: 34px;
+    }
+
+    .hero-side-label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .hero-side strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .location {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Sections */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 50px;
+      margin-bottom: 55px;
+    }
+
+    .section-number {
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 600;
+    }
+
+    /* About */
+
+    .about-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 50px;
+      border: 1px solid var(--line);
+    }
+
+    .about-card p {
+      max-width: 820px;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.25;
+      letter-spacing: -0.035em;
+    }
+
+    /* Experience */
+
+    .experience {
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 50px;
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .experience-date {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .experience-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .experience-title {
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    .experience-company {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .experience-location {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      min-height: 190px;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-index {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .skill-name {
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    /* Education */
+
+    .education-card {
+      background: #1d1d1f;
+      color: white;
+      border-radius: var(--radius);
+      padding: 45px;
+    }
+
+    .education-item {
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .education-item:first-child {
+      padding-top: 0;
+    }
+
+    .education-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .education-degree {
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    .education-school {
+      margin-top: 7px;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .education-years {
+      margin-top: 16px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* Credentials */
+
+    .credentials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .credential-group {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 35px;
+    }
+
+    .credential-group h3 {
+      font-size: 20px;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .credential-list {
+      list-style: none;
+    }
+
+    .credential-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .credential-list li:last-child {
+      border-bottom: 0;
+    }
+
+    /* Languages */
+
+    .language-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .language {
+      padding: 11px 17px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #005bb5;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Contact */
+
+    .contact {
+      padding-bottom: 50px;
+    }
+
+    .contact-card {
+      background: var(--accent);
+      color: white;
+      border-radius: var(--radius);
+      padding: clamp(40px, 7vw, 75px);
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .contact-card h2 {
+      max-width: 650px;
+    }
+
+    .contact-card p {
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 16px;
+    }
+
+    .contact-button {
+      flex-shrink: 0;
+      background: white;
+      color: var(--accent);
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 35px 0 50px;
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .section-header {
         grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 130px;
+      }
+
+      .hero-side {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding-left: 0;
+        padding-top: 25px;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .experience-content {
+        display: block;
+      }
+
+      .experience-location {
+        margin-top: 10px;
+      }
+
+      .skills-grid,
+      .credentials {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        display: block;
+      }
+
+      .contact-button {
+        display: inline-block;
+        margin-top: 30px;
       }
     }
 
-    .card {
-      background: var(--card-bg);
-      border-radius: 18px;
-      padding: 40px;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+    @media (max-width: 520px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
 
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 48px rgba(0,0,0,0.08);
-    }
+      section {
+        padding: 75px 0;
+      }
 
-    .card h3 {
-      font-size: 24px;
-      font-weight: 600;
-      margin-top: 0;
-      margin-bottom: 32px;
-      border-bottom: 1px solid #d2d2d7;
-      padding-bottom: 16px;
-    }
+      .hero {
+        padding-top: 110px;
+      }
 
-    .timeline-item {
-      margin-bottom: 32px;
-    }
+      h1 {
+        font-size: 58px;
+      }
 
-    .timeline-item:last-child {
-      margin-bottom: 0;
-    }
+      .about-card,
+      .education-card,
+      .credential-group {
+        padding: 28px;
+      }
 
-    .timeline-item h4 {
-      margin: 0 0 4px 0;
-      font-size: 19px;
-      font-weight: 600;
-    }
+      .experience-item {
+        padding: 26px 0;
+      }
 
-    .timeline-item h5 {
-      margin: 0 0 6px 0;
-      font-size: 17px;
-      color: var(--accent);
-      font-weight: 500;
-    }
+      footer {
+        display: block;
+      }
 
-    .timeline-item .date {
-      font-size: 15px;
-      color: var(--text-muted);
-      display: block;
-      margin-top: 4px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      padding: 12px 0;
-      border-bottom: 1px solid #f5f5f7;
-      font-size: 17px;
-    }
-
-    li:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
+      .footer-links {
+        margin-top: 12px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <header class="hero">
-      <h1>Khusumith Veera[cite: 1]</h1>
-      <h2>Product manager[cite: 1] | United States[cite: 1]</h2>
-      <p class="summary">Creative problem solver with engineering and management expertise[cite: 1]</p>
-      <div class="contact-links">
-        <a href="mailto:khusumithveera@gmail.com">khusumithveera@gmail.com[cite: 1]</a>
-        <a href="https://www.linkedin.com/in/khusumithveera05" target="_blank" rel="noopener noreferrer">LinkedIn Profile[cite: 1]</a>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">KV.</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
       </div>
-    </header>
 
-    <div class="grid">
-      <main>
-        <section class="card">
-          <h3>Experience</h3>
-          <div class="timeline-item">
-            <h4>Associate Product Manager[cite: 1]</h4>
-            <h5>TechCiti Software Consulting Private Limited[cite: 1]</h5>
-            <span class="date">September 2025 - August 2026 (1 year)[cite: 1] | Bengaluru[cite: 1]</span>
-          </div>
-          
-          <div class="timeline-item">
-            <h4>Product Manager[cite: 1]</h4>
-            <h5>Awwzo[cite: 1]</h5>
-            <span class="date">September 2024 - December 2024 (4 months)[cite: 1] | Bengaluru, Karnataka, India[cite: 1]</span>
-          </div>
-
-          <div class="timeline-item">
-            <h4>AIML Engineer[cite: 1]</h4>
-            <h5>Google[cite: 1]</h5>
-            <span class="date">July 2024 September 2024 (3 months)[cite: 1]</span>
-          </div>
-
-          <div class="timeline-item">
-            <h4>AI and Cloud Engineer & Frontend Developer (3 months)[cite: 1]</h4>
-            <h5>IBM[cite: 1]</h5>
-            <span class="date">AI and Cloud Engineer: July 2024 - August 2024 (2 months)[cite: 1] <br> Frontend Developer: June 2024 - August 2024 (3 months)[cite: 1]</span>
-          </div>
-
-          <div class="timeline-item">
-            <h4>Founder & CEO[cite: 1]</h4>
-            <h5>Fresh Filters[cite: 1]</h5>
-            <span class="date">March 2020 - January 2022 (1 year 11 months)[cite: 1] | Bengaluru[cite: 1]</span>
-          </div>
-        </section>
-        
-        <section class="card">
-          <h3>Education</h3>
-          <div class="timeline-item">
-            <h4>Master of Science, Engineering Management (2026-2028)[cite: 1]</h4>
-            <h5>University of Massachusetts Amherst[cite: 1]</h5>
-          </div>
-          <div class="timeline-item">
-            <h4>Bachelor of Engineering, Compuer science - AIML (2021-2025)[cite: 1]</h4>
-            <h5>Visvesvaraya Technological University[cite: 1]</h5>
-          </div>
-        </section>
-      </main>
-
-      <aside>
-        <section class="card">
-          <h3>Top Skills</h3>
-          <ul>
-            <li>Product Management[cite: 1]</li>
-            <li>Project Management[cite: 1]</li>
-            <li>Strategic Thinking[cite: 1]</li>
-          </ul>
-        </section>
-        
-        <section class="card">
-          <h3>Certifications & Awards</h3>
-          <ul>
-            <li>Design Thinking for Innovation[cite: 1]</li>
-            <li>Financial Markets[cite: 1]</li>
-            <li>Successful Negotiation: Essential Strategies and Skills[cite: 1]</li>
-            <li>IETE Tech Talk (Honors-Awards)[cite: 1]</li>
-            <li>Debate Competition (Honors-Awards)[cite: 1]</li>
-          </ul>
-        </section>
-
-        <section class="card">
-          <h3>Languages</h3>
-          <ul>
-            <li>Telugu[cite: 1]</li>
-            <li>English[cite: 1]</li>
-            <li>Hindi[cite: 1]</li>
-            <li>Tamil[cite: 1]</li>
-            <li>Kannada[cite: 1]</li>
-          </ul>
-        </section>
-      </aside>
+      <a href="mailto:khusumithveera@gmail.com" class="nav-cta">
+        Let's talk
+      </a>
     </div>
-  </div>
+  </nav>
+
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            Product Manager
+          </div>
+
+          <h1>
+            Turning complex problems into simple products.
+          </h1>
+
+          <p class="hero-description">
+            Creative problem solver with engineering and management expertise,
+            focused on building thoughtful products and meaningful experiences.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#experience" class="button button-primary">
+              Explore my work
+            </a>
+
+            <a href="mailto:khusumithveera@gmail.com" class="button button-secondary">
+              Get in touch
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="hero-side-label">Currently</div>
+          <strong>
+            M.S. Engineering Management
+          </strong>
+
+          <div class="location">
+            University of Massachusetts Amherst<br />
+            2026 — 2028
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">01 / About</div>
+
+          <h2>
+            Engineering mindset.<br />
+            Product thinking.
+          </h2>
+        </div>
+
+        <div class="about-card">
+          <p>
+            I bring together engineering, management, and product thinking
+            to understand difficult problems, find opportunities, and create
+            simple solutions that people can actually use.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">02 / Experience</div>
+
+          <h2>
+            Building across<br />
+            product & technology.
+          </h2>
+        </div>
+
+        <div class="experience">
+
+          <div class="experience-item">
+            <div class="experience-date">
+              Sep 2025 — Aug 2026
+            </div>
+
+            <div class="experience-content">
+              <div>
+                <div class="experience-title">
+                  Associate Product Manager
+                </div>
+                <div class="experience-company">
+                  TechCiti Software Consulting Private Limited
+                </div>
+              </div>
+
+              <div class="experience-location">
+                Bengaluru
+              </div>
+            </div>
+          </div>
+
+
+          <div class="experience-item">
+            <div class="experience-date">
+              Sep 2024 — Dec 2024
+            </div>
+
+            <div class="experience-content">
+              <div>
+                <div class="experience-title">
+                  Product Manager
+                </div>
+                <div class="experience-company">
+                  Awwzo
+                </div>
+              </div>
+
+              <div class="experience-location">
+                Bengaluru, Karnataka
+              </div>
+            </div>
+          </div>
+
+
+          <div class="experience-item">
+            <div class="experience-date">
+              Jul 2024 — Sep 2024
+            </div>
+
+            <div class="experience-content">
+              <div>
+                <div class="experience-title">
+                  AIML Engineer
+                </div>
+                <div class="experience-company">
+                  Google
+                </div>
+              </div>
+
+              <div class="experience-location">
+                United States
+              </div>
+            </div>
+          </div>
+
+
+          <div class="experience-item">
+            <div class="experience-date">
+              Jul 2024 — Aug 2024
+            </div>
+
+            <div class="experience-content">
+              <div>
+                <div class="experience-title">
+                  AI & Cloud Engineer
+                </div>
+                <div class="experience-company">
+                  IBM
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="experience-item">
+            <div class="experience-date">
+              Jun 2024 — Aug 2024
+            </div>
+
+            <div class="experience-content">
+              <div>
+                <div class="experience-title">
+                  Frontend Developer
+                </div>
+                <div class="experience-company">
+                  IBM
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="experience-item">
+            <div class="experience-date">
+              Mar 2020 — Jan 2022
+            </div>
+
+            <div class="experience-content">
+              <div>
+                <div class="experience-title">
+                  Founder & CEO
+                </div>
+                <div class="experience-company">
+                  Fresh Filters
+                </div>
+              </div>
+
+              <div class="experience-location">
+                Bengaluru
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Skills -->
+    <section>
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">03 / Capabilities</div>
+
+          <h2>
+            The way I<br />
+            approach problems.
+          </h2>
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <span class="skill-index">01</span>
+            <span class="skill-name">Product Management</span>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-index">02</span>
+            <span class="skill-name">Project Management</span>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-index">03</span>
+            <span class="skill-name">Strategic Thinking</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Education -->
+    <section id="education">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">04 / Education</div>
+
+          <h2>
+            Learning from<br />
+            engineering to management.
+          </h2>
+        </div>
+
+        <div class="education-card">
+
+          <div class="education-item">
+            <div class="education-degree">
+              Master of Science — Engineering Management
+            </div>
+
+            <div class="education-school">
+              University of Massachusetts Amherst
+            </div>
+
+            <div class="education-years">
+              2026 — 2028
+            </div>
+          </div>
+
+
+          <div class="education-item">
+            <div class="education-degree">
+              Bachelor of Engineering — Computer Science, AIML
+            </div>
+
+            <div class="education-school">
+              Visvesvaraya Technological University
+            </div>
+
+            <div class="education-years">
+              2021 — 2025
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Certifications + Languages -->
+    <section>
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">05 / Beyond work</div>
+
+          <h2>
+            Curious by<br />
+            default.
+          </h2>
+        </div>
+
+        <div class="credentials">
+
+          <div class="credential-group">
+            <h3>Certifications</h3>
+
+            <ul class="credential-list">
+              <li>Design Thinking for Innovation</li>
+              <li>Financial Markets</li>
+              <li>Successful Negotiation: Essential Strategies and Skills</li>
+            </ul>
+          </div>
+
+
+          <div class="credential-group">
+            <h3>Languages</h3>
+
+            <div class="language-pills">
+              <span class="language">Telugu</span>
+              <span class="language">English</span>
+              <span class="language">Hindi</span>
+              <span class="language">Tamil</span>
+              <span class="language">Kannada</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="contact-card">
+
+          <div>
+            <h2>
+              Let's build something meaningful.
+            </h2>
+
+            <p>
+              I'm always interested in thoughtful product problems,
+              ambitious ideas, and opportunities to create useful experiences.
+            </p>
+          </div>
+
+          <a
+            href="mailto:khusumithveera@gmail.com"
+            class="contact-button"
+          >
+            khusumithveera@gmail.com
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="container">
+
+    <div>
+      © 2026 Khusumith Veera
+    </div>
+
+    <div class="footer-links">
+      <a
+        href="https://www.linkedin.com/in/khusumithveera05/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+
+      <a href="mailto:khusumithveera@gmail.com">
+        Email
+      </a>
+    </div>
+
+  </footer>
+
 </body>
 </html>
